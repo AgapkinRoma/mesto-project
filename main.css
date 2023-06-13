@@ -14,7 +14,7 @@
 .profile__add-button{background-color:#000;background-image:url(2e13745865ebefdbd6ab.png);background-position:50%;background-repeat:no-repeat;background-size:22px;border:2px solid #fff;cursor:pointer;height:50px;justify-self:flex-end;margin-top:30px;width:150px}@media screen and (max-width:879px){.profile__add-button{background-size:16px;height:50px;margin-top:33px;width:282px}}.profile__add-button:hover{opacity:.6}
 .elements{display:grid;gap:20px 17px;grid-template-columns:repeat(auto-fill,minmax(282px,1fr))}@media screen and (max-width:879px){.elements{margin:0 auto;max-width:582px}}
 .element{margin:0 auto;position:relative}
-.element__photo{border-radius:10px 10px 0 0;display:block;height:282px;margin:0;width:282px}.element__photo:hover{opacity:.7}
+.element__photo{border-radius:10px 10px 0 0;display:block;height:282px;margin:0;width:282px}
 .element__like{background-color:transparent;background-image:url(87ed371465c7a6a1cd01.svg);background-repeat:no-repeat;background-size:contain;border:0;cursor:pointer;height:19px;width:22px}.element__like:hover{opacity:.5}
 .element__title{color:#000;font-size:24px;font-weight:900;line-height:29.08px;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .element__title-block{align-items:center;background-color:#fff;border-radius:0 0 10px 10px;display:flex;justify-content:space-between;margin:0;max-width:246px;padding:25px 15px 24.93px 21px}
