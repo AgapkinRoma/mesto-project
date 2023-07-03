@@ -1,4 +1,4 @@
-///servak
+лл; ///servak
 export default class Api {
   constructor(options) {
     this.basicUrl = options.basicUrl;
