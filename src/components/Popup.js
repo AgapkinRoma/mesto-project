@@ -1,7 +1,6 @@
 export default class Popup {
   constructor(popup) {
     this.popup = popup;
-    this.popups = this.popup.querySelectorAll(".popup");
   }
   openPopup() {
     this.popup.classList.add("popup_opened");
@@ -18,15 +17,13 @@ export default class Popup {
     }
   }
   setEventListeners() {
-    this.popups.forEach((popup) => {
-      popup.addEventListener("mousedown", (evt) => {
-        if (evt.target.classList.contains("popup_opened")) {
-          this.closePopup();
-        }
-        if (evt.target.classList.contains("popup__close")) {
-          this.closePopup();
-        }
-      });
+    this.popup.addEventListener("mousedown", (evt) => {
+      if (evt.target.classList.contains("popup_opened")) {
+        this.closePopup();
+      }
+      if (evt.target.classList.contains("popup__close")) {
+        this.closePopup();
+      }
     });
   }
 }

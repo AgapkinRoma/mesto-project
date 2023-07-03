@@ -128,21 +128,21 @@ export default class Card {
     }
   }
   _setEventListeners() {
-    this.elementTrash.addEventListener("click", () =>
+    this._elementTrash.addEventListener("click", () =>
       handleDeleteCard(this.data._id, this.cardElement)
     );
-    this.elementLike.addEventListener("click", () =>
+    this._elementLike.addEventListener("click", () =>
       this.handleLikeStatus(
         this.data._id,
         this.elementLike.classList.contains("element__like_active"),
         this.cardElement
       )
     );
-    this.elementImg.addEventListener("click", () =>
+    this._elementImg.addEventListener("click", () =>
       this.showPopupPhotoScale(this.elementImg, this.data.name)
     );
   }
-  createCard() {
+  generate() {
     this.placeElement = this._getTemplateElement();
     this.elementImg =
       this.placeElement.document.querySelector(".element__photo");

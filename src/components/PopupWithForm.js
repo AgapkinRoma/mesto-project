@@ -1,9 +1,9 @@
-import Popup from "./modal";
+import Popup from "./Popup";
 export default class PopupWithForm extends Popup {
   constructor({ popup, callbackFormSubmit }) {
     super(popup);
     this.callbackFormSubmit = callbackFormSubmit;
-    this.form = this.popup.querySelector(".popup__form");
+    this.form = this.popup.querySelector(".form");
     this.inputs = this.form.querySelectorAll(".form__input");
     this.button = this.popup.querySelector(".popup__submit");
     this.buttonText = this.button.textContent;
