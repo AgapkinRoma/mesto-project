@@ -41,23 +41,36 @@ export default class Api {
       body: JSON.stringify(data),
     }).then(this._onResponse);
   }
-  deleteCard(data) {
-    return fetch(`${this.basicUrl}/cards/${data}`, {
+  deleteCard(id) {
+    return fetch(`${this.basicUrl}/cards/${id}`, {
       method: "DELETE",
       headers: this.headers,
     }).then(this._onResponse);
   }
-  changelikeStatus(data, isLike) {
+  changeLikeStatus(data, isLike) {
     return fetch(`${this.basicUrl}/cards/likes${data}`, {
       method: isLike ? "DELETE" : "PUT",
       headers: this.headers,
     }).then(this._onResponse);
   }
-  changeAvatar(profileAvatar) {
+  changeAvatar(data) {
     return fetch(`${this.basicUrl}/users/me/avatar`, {
       method: "PATCH",
       headers: this.headers,
-      body: JSON.stringify({ avatar: profileAvatar.value }),
+      body: JSON.stringify({ avatar: data.avatar }),
+    }).then(this._onResponse);
+  }
+  addLike(id) {
+    return fetch(`${this.basicUrl}/cards/${id}/likes`, {
+      method: "PUT",
+      headers: this.headers,
+    }).then(this._onResponse);
+  }
+
+  delLike(id) {
+    return fetch(`${this.basicUrl}/cards/${id}/likes`, {
+      method: "DELETE",
+      headers: this.headers,
     }).then(this._onResponse);
   }
 }

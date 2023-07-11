@@ -1,34 +1,24 @@
 export default class UserInfo {
-  constructor(name, job, avatar, api) {
-    this.name = name;
-    this.job = job;
-    this.avatar = avatar;
-    this.api = api;
+  constructor(name, about, avatar) {
+    this.name = document.querySelector(name);
+    this.about = document.querySelector(about);
+    this.avatar = document.querySelector(avatar);
   }
+//получение данных профиля(имя,статус)
   getUserInfo() {
-    return this.api.userData().then((data) => {
-      this.name = data.name;
-      this.job = data.job;
-      this.avatar = data.avatar;
-      this.userId = data._id;
-      return { ...data };
-    });
+    return {
+      name: this.name.textContent,
+      about: this.about.textContent,
+    };
   }
-  setUserIfno(name, job) {
-    return this.api.editUserProfile(name, job).then((data) => {
-      this.name.textContent = data.name;
-      this.job.textContetn = data.job;
-      this.avatar.src = data.avatar;
-      this.userId = data._id;
-      return { ...data };
-    });
+//установка данных профиля(имя,статус)
+  setUserInfo(data) {
+    this.name.textContent = data.name;
+    this.about.textContent = data.about;
   }
-  setAvatar() {
-    return this.api.changeAvatar(avatar).this((data) => {
-      this.avatar.src = data.avatar;
-    });
+//установка аватара
+  setAvatar(data) {
+    this.avatar.src = data.avatar;
   }
-  getUserId() {
-    return this.userId;
-  }
+
 }
